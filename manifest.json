@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "crueber.openrouter-usage",
+  "name": "OpenRouter Usage",
+  "version": "1.0.0",
+  "author": "Chris Rueber",
+  "license": "MIT",
+  "description": "OpenRouter key usage in the Omarchy bar: spend against the key's own limit, or spend only when the key has no limit, with one previous cycle kept locally for comparison.",
+  "kinds": ["bar-widget"],
+  "entryPoints": { "barWidget": "Panel.qml" },
+  "barWidget": {
+    "displayName": "OpenRouter Usage",
+    "description": "Bar meter for the OpenRouter key limit and current cycle spend, switching to a dollar amount when the key has no limit or runs above the previous cycle. The popup shows reset, previous cycle, and account credits.",
+    "category": "AI",
+    "aliases": ["openrouter", "openrouter-usage", "or-usage"],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "refreshIntervalSec": 300,
+      "nodeCommand": "",
+      "authFile": "",
+      "showCredits": true,
+      "compareColor": "#d9b45b",
+      "warningColor": "#f67400",
+      "criticalColor": "",
+      "onRightClick": ""
+    },
+    "schema": [
+      {
+        "key": "refreshIntervalSec",
+        "type": "integer",
+        "label": "Refresh interval (seconds)",
+        "min": 60,
+        "max": 3600,
+        "step": 60,
+        "defaultValue": 300,
+        "description": "How often to ask OpenRouter for the key's limit and spend. Five minutes is the default."
+      },
+      {
+        "key": "nodeCommand",
+        "type": "path",
+        "label": "Node executable",
+        "defaultValue": "",
+        "description": "Optional. Path to node for the small OpenRouter helper; empty finds node in your login shell PATH."
+      },
+      {
+        "key": "authFile",
+        "type": "path",
+        "label": "OpenCode auth file",
+        "defaultValue": "",
+        "description": "Optional. OpenCode credential file with the openrouter key; empty uses ~/.local/share/opencode/auth.json. OPENROUTER_API_KEY overrides this."
+      },
+      {
+        "key": "showCredits",
+        "type": "boolean",
+        "label": "Show account credits in the popup",
+        "defaultValue": true,
+        "description": "Adds the account credit balance reported by OpenRouter to the popup."
+      },
+      {
+        "key": "compareColor",
+        "type": "string",
+        "label": "Over-previous colour",
+        "defaultValue": "#d9b45b",
+        "description": "Slightly yellow bar/text when the current cycle is over the previous completed cycle."
+      },
+      {
+        "key": "warningColor",
+        "type": "string",
+        "label": "90% colour",
+        "defaultValue": "#f67400",
+        "description": "Orange bar/text at 90% of the limit."
+      },
+      {
+        "key": "criticalColor",
+        "type": "string",
+        "label": "Limit colour",
+        "defaultValue": "",
+        "description": "Red at the limit; empty uses the theme urgent colour."
+      },
+      {
+        "key": "onRightClick",
+        "type": "string",
+        "label": "Right-click command",
+        "defaultValue": "",
+        "description": "Optional shell command; empty opens the OpenRouter activity page."
+      }
+    ]
+  }
+}
