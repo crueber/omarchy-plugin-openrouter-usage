@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.0 — 2026-11-06
+
+- Hide the bar meter/dollar text while the current cycle spend is zero; the
+  OpenRouter mark stays visible and clickable, and the popup still shows the
+  zero-spend cycle, limit, and reset details.
+
 ## 1.0.0 — 2026-11-06
 
 - Initial OpenRouter usage widget: key-based spend/limit meter using

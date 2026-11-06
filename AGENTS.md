@@ -61,8 +61,8 @@ cycle locally, and never caches the key.
 
 ## Bar/color rules
 
-- Limited key: meter of `spend / limit`.
-- No limit: dollars until a previous complete cycle exists; then previous
+- Limited key: meter of `spend / limit`; hide the meter when spend is zero.
+- No limit: hide the dollar text at zero spend; dollars until a previous complete cycle exists; then previous
   spend is the effective limit and a meter is shown. If current spend exceeds
   previous spend, show dollars only and yellow.
 - Color precedence: red at the effective limit, orange >= 90%, yellow when

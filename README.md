@@ -27,6 +27,8 @@ In the bar:
 - a meter of **current cycle spend / key limit**
 - **just the spend** when the key has no limit, or when the current cycle is
   over the previous completed cycle
+- **only the mark** while the current cycle spend is zero; the popup remains
+  clickable and still shows the zero-spend details
 - colours: slightly yellow when over the previous cycle, orange at 90% of the
   limit, red at the limit
 

@@ -75,6 +75,7 @@ Panel {
 
   readonly property var state: Model.comparison(report, history)
   readonly property bool busy: fetchProc.running
+  readonly property bool showBarUsage: report !== null && report.spend > 0
   readonly property string barText: Model.barText(report, state)
   readonly property string heroDetail: Model.heroDetail(report, state)
   readonly property string refreshNote: report !== null && lastErrorMessage !== "" ? "read failed" : ""
@@ -451,7 +452,7 @@ Panel {
       }
 
       Item {
-        visible: root.state.mode === "meter" && root.report !== null
+        visible: root.state.mode === "meter" && root.showBarUsage
         anchors.verticalCenter: parent.verticalCenter
         width: Style.space(22)
         height: Style.space(3)
@@ -477,7 +478,7 @@ Panel {
       Text {
         textFormat: Text.PlainText
         anchors.verticalCenter: parent.verticalCenter
-        visible: root.state.mode === "dollars" && root.report !== null
+        visible: root.state.mode === "dollars" && root.showBarUsage
         text: root.barText
         color: root.stateColor(root.state.color)
         font.family: root.fontFamily

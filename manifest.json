@@ -2,17 +2,25 @@
   "schemaVersion": 1,
   "id": "crueber.openrouter-usage",
   "name": "OpenRouter Usage",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Chris Rueber",
   "license": "MIT",
   "description": "OpenRouter key usage in the Omarchy bar: spend against the key's own limit, or spend only when the key has no limit, with one previous cycle kept locally for comparison.",
-  "kinds": ["bar-widget"],
-  "entryPoints": { "barWidget": "Panel.qml" },
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
   "barWidget": {
     "displayName": "OpenRouter Usage",
     "description": "Bar meter for the OpenRouter key limit and current cycle spend, switching to a dollar amount when the key has no limit or runs above the previous cycle. The popup shows reset, previous cycle, and account credits.",
     "category": "AI",
-    "aliases": ["openrouter", "openrouter-usage", "or-usage"],
+    "aliases": [
+      "openrouter",
+      "openrouter-usage",
+      "or-usage"
+    ],
     "allowMultiple": false,
     "defaultSection": "right",
     "defaults": {
