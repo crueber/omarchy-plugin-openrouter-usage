@@ -94,6 +94,14 @@ omarchy plugin remove crueber.openrouter-usage --yes
 rm -rf ~/.cache/openrouter-usage
 ```
 
+## Remove
+
+```bash
+omarchy plugin disable crueber.openrouter-usage
+omarchy plugin remove crueber.openrouter-usage --yes
+rm -rf ~/.cache/openrouter-usage
+```
+
 ## Use
 
 - **Left click** — open or close the popup
@@ -124,7 +132,7 @@ rm -rf ~/.cache/openrouter-usage
 | `criticalColor` | `""` | Red at the limit; empty uses the theme urgent colour |
 | `onRightClick` | `""` | Optional shell command |
 
-## Requirements
+## Dependencies
 
 - Omarchy with the Omarchy shell bar
 - Node.js for the small OpenRouter helper
