@@ -10,10 +10,13 @@ comparison.
 There is no subscription. The widget asks OpenRouter for the key's own budget:
 
 ```bash
-curl https://openrouter.ai/api/v1/key -H "Authorization: Bearer $OPENROUTER_API_KEY"
+curl -sS -K - https://openrouter.ai/api/v1/key <<EOF
+header = "Authorization: Bearer $OPENROUTER_API_KEY"
+EOF
 ```
 
-The key is read from `OPENROUTER_API_KEY`, or from the `openrouter` entry in
+The here-document keeps the key out of curl's command-line arguments. The key
+itself is read from `OPENROUTER_API_KEY`, or from the `openrouter` entry in
 `~/.local/share/opencode/auth.json`. It is never written to the plugin cache,
 printed, or passed on a command line.
 
