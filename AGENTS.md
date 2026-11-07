@@ -13,6 +13,8 @@ cycle locally, and never caches the key.
 - `scripts/fetch.js` — Node helper: resolves the key and fetches
   `/api/v1/key` plus `/api/v1/credits`.
 - `scripts/install.sh`, `scripts/validate.sh`, `scripts/test-model.js`.
+- `demo/fetch-demo.js`, `demo/demo-session.sh` — offline fixture and the safe
+  swap/restore helper for documentation screenshots.
 
 ## Source and deploy
 
